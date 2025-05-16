@@ -27,11 +27,10 @@ public class EmployeeService {
 	public List<EmployeeResponseDTO> findAllEMployee() {
 
 		List<EmployeeModel> listEmployee = employeeRepository.findAll();
-		EmployeeResponseDTO employeeDto;
 		List<EmployeeResponseDTO> listEmployeeDto = new ArrayList<>();
 
 		for (EmployeeModel employeeModel : listEmployee) {
-			employeeDto = new EmployeeResponseDTO(employeeModel);
+			EmployeeResponseDTO	employeeDto = new EmployeeResponseDTO(employeeModel);
 
 			listEmployeeDto.add(employeeDto);
 		}
